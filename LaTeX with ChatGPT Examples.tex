@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref} % Required for \url
+\setcounter{secnumdepth}{0} % Remove section numbers
+\usepackage{tcolorbox} % To create boxes around equations/content
+
+\title{\textbf{Generating \LaTeX \space code  with ChatGPT}}
+\author{Mike Poirier}
+\date{February 12, 2023}
+
+\pgfplotsset{compat=1.18} 
+\setlength{\parindent}{0pt} % Removes paragraph indenting
+\begin{document}
+
+\maketitle
+
+An example of using \textbf{ChatGPT} (\url{https://chat.openai.com/chat}) to help generate \textbf{\LaTeX} code, that can be used in an variety of educational settings to support teaching high school secondary physics (e.g. DP Physics). Along with the examples shown below, ChatGPT was also used to help determine what packages/dependencies to use, and other \LaTeX \space commands.
+
+\section{ChatGPT Question 1}
+\noindent % Remove section indenting
+    How to write work-energy theorem using integral calculus in LaTeX?
+
+\section{ChatGPT Response 1}
+\noindent
+The Work-Energy Theorem states that the work done by the forces on an object is equal to the change in its kinetic energy. Mathematically, it can be expressed using integral calculus as:
+
+$$W = \int_{t_1}^{t_2} F(t),dt = K_2 - K_1$$
+
+Where $W$ is the work done by the forces, $F(t)$ is the net force acting on the object at time $t$, and $K_1$ and $K_2$ are the initial and final kinetic energies of the object.
+\\
+
+To write this in \LaTeX, you can use the following code:
+
+\begin{tcolorbox} %box
+\begin{verbatim}
+\begin{equation}
+W = \int_{t_1}^{t_2} F(t)\,dt = K_2 - K_1
+\end{equation}
+\end{verbatim}
+\end{tcolorbox}
+
+\newpage
+
+\section{ChatGPT Question 2}
+\noindent
+How to create a Force vs. Time graph in LaTeX?
+
+\section{ChatGPT Response 2}
+\noindent
+ To create a force vs. time graph in \LaTeX, you can use the TikZ package. 
+ \\
+ Here is a simple example:
+\\
+
+\scalebox{0.8}{
+\begin{tikzpicture}
+\begin{axis}[    xlabel={Time (s)},    ylabel={Force (N)},
+xmin=0, xmax=10,    ymin=0, ymax=100,    ]
+\addplot[mark=*, red, thick] coordinates {
+    (0,0)
+    (1,20)
+    (2,40)
+    (3,60)
+    (4,80)
+    (5,100)
+};
+\end{axis}
+\end{tikzpicture}
+}
+
+\begin{tcolorbox}
+\begin{verbatim}
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[xlabel={Time (s)},ylabel={Force 
+(N)},xmin=0,xmax=10,ymin=0,ymax=100,]
+\addplot[mark=*, red, thick] coordinates {
+    (0,0)
+    (1,20)
+    (2,40)
+    (3,60)
+    (4,80)
+    (5,100)
+};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+\end{verbatim}
+\end{tcolorbox}
+
+\end{document}

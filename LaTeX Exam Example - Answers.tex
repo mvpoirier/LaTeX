@@ -1,0 +1,97 @@
+\documentclass[answers]{exam}
+% passed answers argument in []
+% to document class to display answers
+
+\usepackage[]{exam-randomizechoices}
+\setrandomizerseed{10} % change seed to randomize question order and answers.
+
+\title{\textbf{Exam Example with \LaTeX \space [Answers]}}
+\author{Mike Poirier}
+\date{February 21, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Multiple Choice}
+
+\begin{questions}
+
+\question What is the capital of France?
+
+\begin{randomizechoices}
+\choice London
+\correctchoice Paris
+\choice Berlin
+\choice Madrid
+\end{randomizechoices}
+
+\question Who is the current president of the United States?
+
+\begin{randomizechoices}
+\choice George Washington
+\choice Abraham Lincoln
+\choice John F. Kennedy
+\correctchoice Joe Biden
+\end{randomizechoices}
+
+\question What is the capital of Spain?
+
+\begin{randomizechoices}
+\choice London
+\choice Paris
+\choice Berlin
+\correctchoice Madrid
+\end{randomizechoices}
+
+\question Who was the first man to walk on the moon?
+
+\begin{randomizechoices}
+\correctchoice Neil Armstrong
+\choice Buzz Aldrin
+\choice Michael Collins
+\choice Yuri Gagarin
+\end{randomizechoices}
+
+\question Which of these famous physicists invented time?
+
+\begin{oneparchoices}
+ \choice Stephen Hawking 
+ \choice Albert Einstein
+ \choice Emmy Noether
+ \correctchoice This makes no sense
+\end{oneparchoices}
+    
+\question Which of these famous physicists published a paper on Brownian Motion?
+
+\begin{checkboxes}
+ \choice Stephen Hawking 
+ \correctchoice Albert Einstein
+ \choice Emmy Noether
+ \choice I don't know
+\end{checkboxes}
+
+\section{Short and Long Answer}
+
+\question Given the equation \(x^n + y^n = z^n\) for \(x,y,z\) and \(n\) positive
+integers. 
+\begin{parts}
+\part[10] For what values of \(n\) is the statement in the previous question true?
+\vspace{\stretch{1}}
+
+\part[10] For \(n=2\) there's a theorem with a special name. What's that name?
+\vspace{\stretch{1}}
+
+\part[10] What famous mathematician had an elegant proof for this theorem but there was
+not enough space in the margin to write it down?
+\vspace{\stretch{1}}
+
+\end{parts}
+
+\question[20] Compute \[\int_{0}^{\infty} \frac{\sin(x)}{x}\]
+
+\vspace{\stretch{1}}
+
+\end{questions}
+
+\end{document}
